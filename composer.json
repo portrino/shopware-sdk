@@ -10,10 +10,11 @@
   ],
   "autoload": {
     "psr-0": {
-      "LeadCommerce\\Shopware\\": "src/"
+      "LeadCommerce\\Shopware\\SDK\\": "src/"
     }
   },
   "require": {
+    "php" : ">=5.4",
     "guzzlehttp/guzzle": "^6.2"
   }
 }
