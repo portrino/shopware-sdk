@@ -1,0 +1,12 @@
+{
+    "name": "leadcommerce/shopware-sdk",
+    "description": "A PHP SDK for the Shopware 5 REST API.",
+    "license": "Apache v2.0",
+    "authors": [
+        {
+            "name": "Alexander Mahrt",
+            "email": "amahrt@leadcommerce.de"
+        }
+    ],
+    "require": {}
+}
