@@ -50,7 +50,7 @@ abstract class Base
      */
     protected function fetch($uri, $method = 'GET', $body = null, $headers = [])
     {
-        $response = $this->client->request($method, $uri, $body, $headers);
+        $response = $this->client->request($uri, $method, $body, $headers);
         return $this->createEntityFromResponse($response);
     }
 
@@ -63,7 +63,7 @@ abstract class Base
      */
     protected function fetchSimple($uri, $method = 'GET', $body = null, $headers = [])
     {
-        return $this->client->request($method, $uri, $body, $headers);
+        return $this->client->request($uri, $method, $body, $headers);
     }
 
     /**
@@ -75,7 +75,7 @@ abstract class Base
      */
     protected function fetchJson($uri, $method = 'GET', $body = null, $headers = [])
     {
-        $response = $this->client->request($method, $uri, $body, $headers);
+        $response = $this->client->request($uri, $method, $body, $headers);
         $response = json_decode($response->getBody()->getContents());
         return $response ? $response : null;
     }
