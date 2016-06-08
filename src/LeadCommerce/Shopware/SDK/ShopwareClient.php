@@ -123,7 +123,7 @@ class ShopwareClient
      */
     public function __call($name, $arguments = [])
     {
-        if (!preg_match('/^get([a-z]+)Query$/i', $name, $matches)) {
+        if (!preg_match('/^get([a-z]+Query)$/i', $name, $matches)) {
             return false;
         }
 
