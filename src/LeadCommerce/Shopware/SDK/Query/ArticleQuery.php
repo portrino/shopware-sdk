@@ -13,4 +13,12 @@ class ArticleQuery extends Base
     {
         return 'LeadCommerce\\Shopware\\SDK\\Entity\\Article';
     }
+
+    /**
+     * @return string
+     */
+    protected function getQueryPath()
+    {
+        return 'articles';
+    }
 }
