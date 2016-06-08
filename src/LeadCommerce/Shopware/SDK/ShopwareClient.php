@@ -127,7 +127,7 @@ class ShopwareClient
             return false;
         }
 
-        $className = __NAMESPACE__ . "\\Query\\" . $matches[0];
+        $className = __NAMESPACE__ . "\\Query\\" . $matches[1];
 
         if (!class_exists($className)) {
             return false;
