@@ -102,9 +102,7 @@ class ShopwareClient
         }
 
         return $this->client->request($method, $uri, [
-            'body' => [
-                'json' => $body
-            ],
+            'form_params' => $body,
             'headers' => $headers,
             'auth' => [
                 $this->username,
