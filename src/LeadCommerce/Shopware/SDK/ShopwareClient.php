@@ -5,7 +5,12 @@ namespace LeadCommerce\Shopware\SDK;
 
 use GuzzleHttp\Client;
 
-
+/**
+ * Class ShopwareClient
+ * @package LeadCommerce\Shopware\SDK
+ * @author Alexander Mahrt <amahrt@leadcommerce.de>
+ * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
+ */
 class ShopwareClient
 {
     const VERSION = '0.0.1';

@@ -6,6 +6,12 @@ namespace LeadCommerce\Shopware\SDK\Query;
 use LeadCommerce\Shopware\SDK\ShopwareClient;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * Class Base
+ * @package LeadCommerce\Shopware\SDK\Query
+ * @author Alexander Mahrt <amahrt@leadcommerce.de>
+ * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
+ */
 abstract class Base
 {
     /**
