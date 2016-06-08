@@ -29,17 +29,44 @@ abstract class Base
     }
 
     /**
-     * @param string $method
      * @param $uri
+     * @param string $method
      * @param null $body
      * @param array $headers
      * @return array|mixed
      */
-    protected function fetch($method = 'GET', $uri, $body = null, $headers = [])
+    protected function fetch($uri, $method = 'GET', $body = null, $headers = [])
     {
         $response = $this->client->request($method, $uri, $body, $headers);
         return $this->createEntityFromResponse($response);
     }
+
+    /**
+     * @param $uri
+     * @param string $method
+     * @param null $body
+     * @param array $headers
+     * @return mixed|ResponseInterface
+     */
+    protected function fetchSimple($uri, $method = 'GET', $body = null, $headers = [])
+    {
+        return $this->client->request($method, $uri, $body, $headers);
+    }
+
+    /**
+     * @param $uri
+     * @param string $method
+     * @param null $body
+     * @param array $headers
+     * @return false|\stdClass
+     */
+    protected function fetchJson($uri, $method = 'GET', $body = null, $headers = [])
+    {
+        $response = $this->client->request($method, $uri, $body, $headers);
+        $response = json_decode($response->getBody()->getContents());
+        return $response ? $response : null;
+    }
+
 
     /**
      * @param ResponseInterface $response

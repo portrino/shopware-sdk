@@ -53,13 +53,13 @@ class ShopwareClient
 
     /**
      * Does a request.
-     * @param string $method
      * @param $uri
+     * @param string $method
      * @param null $body
      * @param array $headers
      * @return mixed|\Psr\Http\Message\ResponseInterface
      */
-    public function request($method = 'GET', $uri, $body = null, $headers = [])
+    public function request($uri, $method = 'GET', $body = null, $headers = [])
     {
         if (empty($headers['Accept'])) {
             $headers['Accept'] = 'application/json';
