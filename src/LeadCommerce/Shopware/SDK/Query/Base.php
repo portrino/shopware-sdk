@@ -89,6 +89,7 @@ abstract class Base
     {
         $content = $response->getBody()->getContents();
         $content = json_decode($content);
+        $content = $content->data;
 
         if (is_array($content)) {
             return array_map(function ($item) {
