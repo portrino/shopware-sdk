@@ -9,6 +9,10 @@ namespace LeadCommerce\Shopware\SDK\Entity;
  * @author Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
+/**
+ * Class Base
+ * @package LeadCommerce\Shopware\SDK\Entity
+ */
 class Base
 {
     /**
@@ -25,6 +29,15 @@ class Base
     {
         $this->_attributes = $attributes;
         return $this;
+    }
+
+    /**
+     * Gets the attributes of this entity.
+     * @return array
+     */
+    public function getArrayCopy()
+    {
+        return $this->_attributes;
     }
 
     /**

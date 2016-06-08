@@ -20,13 +20,26 @@ abstract class Base
     protected $client;
 
     /**
+     * @var null|string
+     */
+    protected $singleQueryPath = null;
+
+    /**
+     * @var string
+     */
+    protected $queryPath;
+
+    /**
      * Base constructor.
      * @param $client
      */
     public function __construct($client)
     {
         $this->client = $client;
+        $this->queryPath = $this->getQueryPath();
+        $this->singleQueryPath = $this->singleQueryPath ? $this->singleQueryPath : $this->getQueryPath();
     }
+
 
     /**
      * @param $uri
@@ -103,7 +116,39 @@ abstract class Base
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     protected abstract function getClass();
+
+    /**
+     * @return string
+     */
+    protected abstract function getQueryPath();
+
+    /**
+     * @return array
+     */
+    public function findAll()
+    {
+        return $this->fetch($this->queryPath);
+    }
+
+    /**
+     * @param $id
+     * @return array
+     */
+    public function findOne($id)
+    {
+        return $this->fetch($this->singleQueryPath . '/' . $id);
+    }
+
+    /**
+     * @param \LeadCommerce\Shopware\SDK\Entity\Base $entity
+     * @return \LeadCommerce\Shopware\SDK\Entity\Base
+     */
+    public function save(\LeadCommerce\Shopware\SDK\Entity\Base $entity)
+    {
+        $this->fetch($this->singleQueryPath, 'POST', $entity->getArrayCopy());
+        return $entity;
+    }
 }

@@ -14,7 +14,7 @@ class VersionQuery extends Base
         return 'stdClass';
     }
     
-    protected function getVersion()
+    public function getVersion()
     {
         return $this->fetchJson('/version');
     }
