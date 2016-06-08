@@ -4,12 +4,44 @@ namespace LeadCommerce\Shopware\SDK;
 
 
 use GuzzleHttp\Client;
+use LeadCommerce\Shopware\SDK\Query\AddressQuery;
+use LeadCommerce\Shopware\SDK\Query\ArticleQuery;
+use LeadCommerce\Shopware\SDK\Query\CacheQuery;
+use LeadCommerce\Shopware\SDK\Query\CategoriesQuery;
+use LeadCommerce\Shopware\SDK\Query\CountriesQuery;
+use LeadCommerce\Shopware\SDK\Query\CustomerGroupsQuery;
+use LeadCommerce\Shopware\SDK\Query\CustomerQuery;
+use LeadCommerce\Shopware\SDK\Query\GenerateArticleImageQuery;
+use LeadCommerce\Shopware\SDK\Query\ManufacturersQuery;
+use LeadCommerce\Shopware\SDK\Query\MediaQuery;
+use LeadCommerce\Shopware\SDK\Query\OrdersQuery;
+use LeadCommerce\Shopware\SDK\Query\PropertyGroupsQuery;
+use LeadCommerce\Shopware\SDK\Query\ShopsQuery;
+use LeadCommerce\Shopware\SDK\Query\TranslationsQuery;
+use LeadCommerce\Shopware\SDK\Query\VariantsQuery;
+use LeadCommerce\Shopware\SDK\Query\VersionQuery;
 
 /**
  * Class ShopwareClient
  * @package LeadCommerce\Shopware\SDK
  * @author Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
+ * @method AddressQuery getAddressQuery()
+ * @method ArticleQuery getArticleQuery()
+ * @method CacheQuery getCacheQuery()
+ * @method CategoriesQuery getCategoriesQuery()
+ * @method CountriesQuery getCountriesQuery()
+ * @method CustomerGroupsQuery getCustomerGroupsQuery()
+ * @method CustomerQuery getCustomerQuery()
+ * @method GenerateArticleImageQuery getGenerateArticleImageQuery()
+ * @method MediaQuery getMediaQuery()
+ * @method ManufacturersQuery getManufacturersQuery()
+ * @method OrdersQuery getOrdersQuery()
+ * @method PropertyGroupsQuery getPropertyGroupsQuery()
+ * @method ShopsQuery getShopsQuery()
+ * @method TranslationsQuery getTranslationsQuery()
+ * @method VariantsQuery getVariantsQuery()
+ * @method VersionQuery getVersionQuery()
  */
 class ShopwareClient
 {
