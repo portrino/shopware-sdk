@@ -6,7 +6,7 @@ A PHP SDK for the Shopware 5 REST API.
 Code information:
 
 [![Build Status](https://travis-ci.org/LeadCommerceDE/shopware-sdk.png?branch=master)](https://travis-ci.org/LeadCommerceDE/shopware-sdk)
-[![Coverage Status](https://coveralls.io/repos/LeadCommerceDE/shopware-sdk/badge.png?branch=master)](https://coveralls.io/r/LeadCommerceDE/shopware-sdk?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/LeadCommerceDE/shopware-sdk/badge.svg?branch=master)](https://coveralls.io/github/LeadCommerceDE/shopware-sdk?branch=master)
 [![Code Coverage Scrutinizer](https://scrutinizer-ci.com/g/LeadCommerceDE/shopware-sdk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/LeadCommerceDE/shopware-sdk/?branch=master)
 [![Code Climate](https://codeclimate.com/github/LeadCommerceDE/shopware-sdk.png)](https://codeclimate.com/github/LeadCommerceDE/shopware-sdk)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/LeadCommerceDE/shopware-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/LeadCommerceDE/shopware-sdk/?branch=master)
