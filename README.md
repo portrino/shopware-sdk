@@ -20,14 +20,6 @@ Package information:
 [![License](https://poser.pugx.org/leadcommerce/shopware-sdk/license.svg)](https://packagist.org/packages/leadcommerce/shopware-sdk)
 [![Dependency Status](https://gemnasium.com/LeadCommerceDE/shopware-sdk.png)](https://gemnasium.com/LeadCommerceDE/shopware-sdk)
 
-
-## Usage
-
-
-```php
-// some code example?
-```
-
 ## Installing
 
 ```bash
