@@ -72,7 +72,7 @@ class Base
     public function __call($name, $arguments)
     {
         $command = substr($name, 0, 3);
-        $property = substr($name, 3);
+        $property = lcfirst(substr($name, 3));
 
         if ($command == 'get') {
             if (array_key_exists($property, $this->_attributes)) {
