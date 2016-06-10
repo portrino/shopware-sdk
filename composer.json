@@ -12,6 +12,11 @@
             "email": "jochen.niebuhr@nk360.de"
         }
     ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
     "require": {
         "php" : ">=5.5",
         "guzzlehttp/guzzle": "^6.2"
