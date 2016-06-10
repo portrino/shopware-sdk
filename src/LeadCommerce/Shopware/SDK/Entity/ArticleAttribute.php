@@ -10,7 +10,7 @@
 namespace LeadCommerce\Shopware\SDK\Entity;
 
 /**
- * Class ArticleAttribute
+ * Class Attribute
  */
 class ArticleAttribute extends Base
 {

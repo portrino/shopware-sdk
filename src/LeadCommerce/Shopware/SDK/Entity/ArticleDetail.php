@@ -450,7 +450,7 @@ class ArticleDetail extends Base
     /**
      * @return ArticleAttribute
      */
-    public function getAttribute()
+    public function getAttributes()
     {
         return $this->attribute;
     }
@@ -460,7 +460,7 @@ class ArticleDetail extends Base
      *
      * @return ArticleDetail
      */
-    public function setAttribute($attribute)
+    public function setAttributes($attribute)
     {
         $this->attribute = $attribute;
 
