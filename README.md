@@ -31,7 +31,7 @@ Package information:
 ## Installing
 
 ```bash
-composer require LeadCommerceDE/shopware-sdk
+composer require leadcommerce/shopware-sdk
 ```
 
 ## Issues/Features proposals
