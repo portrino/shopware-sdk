@@ -14,10 +14,10 @@ Code information:
 
 Package information:
 
-[![Latest Stable Version](https://poser.pugx.org/LeadCommerceDE/shopware-sdk/v/stable.svg)](https://packagist.org/packages/LeadCommerceDE/shopware-sdk)
-[![Total Downloads](https://poser.pugx.org/LeadCommerceDE/shopware-sdk/downloads.svg)](https://packagist.org/packages/LeadCommerceDE/shopware-sdk)
-[![Latest Unstable Version](https://poser.pugx.org/LeadCommerceDE/shopware-sdk/v/unstable.svg)](https://packagist.org/packages/LeadCommerceDE/shopware-sdk)
-[![License](https://poser.pugx.org/LeadCommerceDE/shopware-sdk/license.svg)](https://packagist.org/packages/LeadCommerceDE/shopware-sdk)
+[![Latest Stable Version](https://poser.pugx.org/leadcommerce/shopware-sdk/v/stable.svg)](https://packagist.org/packages/leadcommerce/shopware-sdk)
+[![Total Downloads](https://poser.pugx.org/leadcommerce/shopware-sdk/downloads.svg)](https://packagist.org/packages/leadcommerce/shopware-sdk)
+[![Latest Unstable Version](https://poser.pugx.org/leadcommerce/shopware-sdk/v/unstable.svg)](https://packagist.org/packages/leadcommerce/shopware-sdk)
+[![License](https://poser.pugx.org/leadcommerce/shopware-sdk/license.svg)](https://packagist.org/packages/leadcommerce/shopware-sdk)
 [![Dependency Status](https://gemnasium.com/LeadCommerceDE/shopware-sdk.png)](https://gemnasium.com/LeadCommerceDE/shopware-sdk)
 
 
