@@ -18,7 +18,7 @@ class Base
     /**
      * @var array
      */
-    protected $_attributes = [];
+    private $_attributes = [];
 
     /**
      * Sets the attributes of this entity.
