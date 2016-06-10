@@ -8,9 +8,6 @@ namespace LeadCommerce\Shopware\SDK\Entity;
  * @author Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
-/**
- * Class Base
- */
 class Base
 {
     /**
