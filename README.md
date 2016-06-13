@@ -26,6 +26,40 @@ Package information:
 composer require leadcommerce/shopware-sdk
 ```
 
+## Examples
+```php
+<?php
+    require 'vendor/autoload.php';
+    
+    // Create a new client
+    $client = new ShopwareClient('http://shopware.dev/api/', 'user', 'api_key');
+    
+    // Fetch all articles
+    $articles = $client->getArticleQuery()->findAll();
+    
+    // Fetch one article by id
+    $article = $client->getArticleQuery()->findOne(1);
+    
+    // Update article
+    $article->setName("John product doe");
+    $updatedArticle = $client->getArticleQuery()->update($article);
+    
+    // Update multiple articles
+    $articleOne = $client->getArticleQuery()->findOne(1);
+    $articleOne->setName("John product doe");
+    $articleTwo = $client->getArticleQuery()->findOne(2);
+    $articleTwo->setName("John product doe 2");
+        
+    $articles = $client->getArticleQuery()->updateBatch([$articleOne, $articleTwo]);
+    
+    // Delete an article
+    $client->getArticleQuery()->delete(1);
+    
+    // Delete multiple articles at once
+    $client->getArticleQuery()->deleteBatch([1, 2, 3]);
+?>
+```
+
 ## Issues/Features proposals
 
 [Here](https://github.com/LeadCommerceDE/shopware-sdk/issues) is the issue tracker.
