@@ -30,7 +30,13 @@ composer require leadcommerce/shopware-sdk
 
 [Here](https://github.com/LeadCommerceDE/shopware-sdk/issues) is the issue tracker.
 
-## Lincense
+## Contributing :-)
+
+* Read the [Code of Conduct](CODE_OF_CONDUCT.md)
+* Write some code
+* Write some tests
+
+## License
 
 [MIT](MIT-LICENSE)
 
