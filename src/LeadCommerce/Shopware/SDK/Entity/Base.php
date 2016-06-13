@@ -11,20 +11,25 @@ namespace LeadCommerce\Shopware\SDK\Entity;
 class Base
 {
     /**
-     * @var array
+     * @var int
      */
-    private $_attributes = [];
+    protected $id;
 
     /**
      * Sets the attributes of this entity.
      *
-     * @param $attributes
+     * @param array $attributes
      *
      * @return $this
      */
-    public function setEntityAttributes($attributes)
+    public function setEntityAttributes(array $attributes)
     {
-        $this->_attributes = $attributes;
+        foreach ($attributes as $attribute => $value) {
+            $setter = 'set' . ucfirst($attribute);
+            if (method_exists($this, $setter)) {
+                $this->$setter($value);
+            }
+        }
 
         return $this;
     }
@@ -36,54 +41,26 @@ class Base
      */
     public function getArrayCopy()
     {
-        return $this->_attributes;
+        return get_object_vars($this);
     }
 
     /**
-     * @param $name
-     *
-     * @return null
+     * @return int
      */
-    public function __get($name)
+    public function getId()
     {
-        if (array_key_exists($name, $this->_attributes)) {
-            $this->_attributes[$name];
-        }
+        return $this->id;
     }
 
     /**
-     * @param $name
-     * @param $value
+     * @param int $id
      *
-     * @return $this
+     * @return Base
      */
-    public function __set($name, $value)
+    public function setId($id)
     {
-        $this->_attributes[$name] = $value;
+        $this->id = $id;
 
         return $this;
-    }
-
-    /**
-     * @param $name
-     * @param $arguments
-     *
-     * @return $this|mixed|null
-     */
-    public function __call($name, $arguments)
-    {
-        $command = substr($name, 0, 3);
-        $property = lcfirst(substr($name, 3));
-
-        if ($command == 'get') {
-            if (array_key_exists($property, $this->_attributes)) {
-                return $this->_attributes[$property];
-            }
-        } elseif ($command == 'set') {
-            $value = count($arguments) > 0 ? $arguments[0] : null;
-            $this->_attributes[$property] = $value;
-
-            return $this;
-        }
     }
 }

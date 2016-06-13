@@ -1,33 +1,33 @@
 <?php
-
-namespace LeadCommerce\Shopware\SDK\Query;
-
-use LeadCommerce\Shopware\SDK\Util\Constants;
-
 /**
- * Class MediaQuery
+ * LeadCommerce\Shopware\SDK\Query
+ *
+ * Copyright 2016 LeadCommerce
  *
  * @author Alexander Mahrt <amahrt@leadcommerce.de>
  * @copyright 2016 LeadCommerce <amahrt@leadcommerce.de>
  */
-class MediaQuery extends Base
+namespace LeadCommerce\Shopware\SDK\Query;
+
+use LeadCommerce\Shopware\SDK\Util\Constants;
+
+class GenerateArticleImagesQuery extends Base
 {
     /**
      * @var array
      */
     protected $methodsAllowed = [
-        Constants::METHOD_CREATE,
-        Constants::METHOD_GET,
-        Constants::METHOD_GET_BATCH,
-        Constants::METHOD_DELETE,
+        Constants::METHOD_UPDATE,
     ];
 
     /**
-     * @return mixed
+     * Gets the class for the entities.
+     *
+     * @return string
      */
     protected function getClass()
     {
-        return 'LeadCommerce\\Shopware\\SDK\\Entity\\Media';
+        return 'stdClass';
     }
 
     /**
@@ -38,6 +38,6 @@ class MediaQuery extends Base
      */
     protected function getQueryPath()
     {
-        return 'media';
+        return 'generateArticleImages';
     }
 }
