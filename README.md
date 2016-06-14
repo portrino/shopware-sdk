@@ -40,6 +40,14 @@ composer require leadcommerce/shopware-sdk
     // Fetch one article by id
     $article = $client->getArticleQuery()->findOne(1);
     
+    // Create an article
+    $article = new Article();
+    $article->setName("John product doe");
+    $article->setDescription("Lorem ipsum");
+    // ... <- more setters are required
+    $client->getArticleQuery()->create($article);
+   
+    
     // Update article
     $article->setName("John product doe");
     $updatedArticle = $client->getArticleQuery()->update($article);
