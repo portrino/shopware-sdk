@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class LeadCommerce\Shopware\SDK\Query\Base | shopware-sdk</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-LeadCommerce.html">
+						LeadCommerce<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-LeadCommerce.Shopware.html">
+						Shopware<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-LeadCommerce.Shopware.SDK.html">
+						SDK<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-LeadCommerce.Shopware.SDK.Entity.html">
+						Entity					</a>
+
+						</li>
+				<li>
+					<a href="namespace-LeadCommerce.Shopware.SDK.Exception.html">
+						Exception					</a>
+
+						</li>
+				<li class="active">
+					<a href="namespace-LeadCommerce.Shopware.SDK.Query.html">
+						Query					</a>
+
+						</li>
+				<li>
+					<a href="namespace-LeadCommerce.Shopware.SDK.Util.html">
+						Util					</a>
+
+						</li>
+							</ul></li></ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.AddressQuery.html">AddressQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.ArticleQuery.html">ArticleQuery</a></li>
+				<li class="active"><a href="class-LeadCommerce.Shopware.SDK.Query.Base.html">Base</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.CacheQuery.html">CacheQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.CategoriesQuery.html">CategoriesQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.CountriesQuery.html">CountriesQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.CustomerGroupsQuery.html">CustomerGroupsQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.CustomerQuery.html">CustomerQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.GenerateArticleImagesQuery.html">GenerateArticleImagesQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.ManufacturersQuery.html">ManufacturersQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.MediaQuery.html">MediaQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.OrdersQuery.html">OrdersQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.PropertyGroupsQuery.html">PropertyGroupsQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.ShopsQuery.html">ShopsQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.TranslationsQuery.html">TranslationsQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.VariantsQuery.html">VariantsQuery</a></li>
+				<li><a href="class-LeadCommerce.Shopware.SDK.Query.VersionQuery.html">VersionQuery</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-LeadCommerce.Shopware.SDK.Query.html" title="Summary of LeadCommerce\Shopware\SDK\Query"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Base</h1>
+
+
+	<div class="description">
+	<p>Class Base</p>
+	</div>
+
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-LeadCommerce.Shopware.SDK.Query.AddressQuery.html">LeadCommerce\Shopware\SDK\Query\AddressQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.ArticleQuery.html">LeadCommerce\Shopware\SDK\Query\ArticleQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.OrdersQuery.html">LeadCommerce\Shopware\SDK\Query\OrdersQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.PropertyGroupsQuery.html">LeadCommerce\Shopware\SDK\Query\PropertyGroupsQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.ShopsQuery.html">LeadCommerce\Shopware\SDK\Query\ShopsQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.TranslationsQuery.html">LeadCommerce\Shopware\SDK\Query\TranslationsQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.VariantsQuery.html">LeadCommerce\Shopware\SDK\Query\VariantsQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.VersionQuery.html">LeadCommerce\Shopware\SDK\Query\VersionQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.CacheQuery.html">LeadCommerce\Shopware\SDK\Query\CacheQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.CategoriesQuery.html">LeadCommerce\Shopware\SDK\Query\CategoriesQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.CountriesQuery.html">LeadCommerce\Shopware\SDK\Query\CountriesQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.CustomerGroupsQuery.html">LeadCommerce\Shopware\SDK\Query\CustomerGroupsQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.CustomerQuery.html">LeadCommerce\Shopware\SDK\Query\CustomerQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.GenerateArticleImagesQuery.html">LeadCommerce\Shopware\SDK\Query\GenerateArticleImagesQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.ManufacturersQuery.html">LeadCommerce\Shopware\SDK\Query\ManufacturersQuery</a>, 
+			<a href="class-LeadCommerce.Shopware.SDK.Query.MediaQuery.html">LeadCommerce\Shopware\SDK\Query\MediaQuery</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-LeadCommerce.html">LeadCommerce</a>\<a href="namespace-LeadCommerce.Shopware.html">Shopware</a>\<a href="namespace-LeadCommerce.Shopware.SDK.html">SDK</a>\<a href="namespace-LeadCommerce.Shopware.SDK.Query.html">Query</a><br>
+		
+
+				<b>Copyright:</b>
+				2016 LeadCommerce <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#97;m&#x61;&#104;&#x72;&#116;&#x40;&#108;&#x65;&#97;d&#x63;&#111;&#x6d;&#109;&#x65;&#114;&#x63;&#x65;&#46;&#x64;&#101;">&#97;m&#x61;&#104;&#x72;&#116;&#x40;&#108;&#x65;&#97;d&#x63;&#111;&#x6d;&#109;&#x65;&#114;&#x63;&#x65;&#46;&#x64;&#101;</a><br>
+				<b>Author:</b>
+				Alexander Mahrt <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#x3a;&#97;m&#x61;&#104;&#x72;&#116;&#x40;&#108;&#x65;&#97;d&#x63;&#111;&#x6d;&#109;&#x65;&#114;&#x63;&#x65;&#46;&#x64;&#101;">&#97;m&#x61;&#104;&#x72;&#116;&#x40;&#108;&#x65;&#97;d&#x63;&#111;&#x6d;&#109;&#x65;&#114;&#x63;&#x65;&#46;&#x64;&#101;</a><br>
+			<b>Located at</b> <a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#10-278" title="Go to source code">LeadCommerce/Shopware/SDK/Query/Base.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#41-50" title="Go to source code">__construct</a>( <span> <var>$client</var></span> )</code>
+
+		<div class="description short">
+			<p>Base constructor.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Base constructor.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$client</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getQueryPath" id="_getQueryPath">
+
+		<td class="attributes"><code>
+			abstract protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getQueryPath">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#52-58" title="Go to source code">getQueryPath</a>( )</code>
+
+		<div class="description short">
+			<p>Gets the query path to look for entities.
+E.G: 'variants' or 'articles'</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets the query path to look for entities.
+E.G: 'variants' or 'articles'</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="findAll" id="_findAll">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a>[]</code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_findAll">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#60-70" title="Go to source code">findAll</a>( )</code>
+
+		<div class="description short">
+			<p>Finds all entities.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Finds all entities.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a>[]</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fetch" id="_fetch">
+
+		<td class="attributes"><code>
+			 protected 
+
+			array|mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fetch">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#86-101" title="Go to source code">fetch</a>( <span> <var>$uri</var></span>, <span>string <var>$method</var> = <span class="php-quote">'GET'</span></span>, <span>null <var>$body</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$headers</var> = []</span> )</code>
+
+		<div class="description short">
+			<p>Fetch and build entity.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Fetch and build entity.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$uri</var></dt>
+					<dd></dd>
+					<dt><var>$method</var></dt>
+					<dd></dd>
+					<dt><var>$body</var></dt>
+					<dd></dd>
+					<dt><var>$headers</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createEntityFromResponse" id="_createEntityFromResponse">
+
+		<td class="attributes"><code>
+			 protected 
+
+			array|mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createEntityFromResponse">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#103-123" title="Go to source code">createEntityFromResponse</a>( <span>Psr\Http\Message\ResponseInterface <var>$response</var></span> )</code>
+
+		<div class="description short">
+			<p>Creates an entity</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Creates an entity</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$response</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="createEntity" id="_createEntity">
+
+		<td class="attributes"><code>
+			 protected 
+
+			<code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_createEntity">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#125-143" title="Go to source code">createEntity</a>( <span> <var>$content</var></span> )</code>
+
+		<div class="description short">
+			<p>Creates an entity based on the getClass method.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Creates an entity based on the getClass method.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$content</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getClass" id="_getClass">
+
+		<td class="attributes"><code>
+			abstract protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getClass">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#145-150" title="Go to source code">getClass</a>( )</code>
+
+		<div class="description short">
+			<p>Gets the class for the entities.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets the class for the entities.</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="findOne" id="_findOne">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_findOne">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#152-164" title="Go to source code">findOne</a>( <span> <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Finds an entity by its id.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Finds an entity by its id.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="create" id="_create">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_create">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#166-180" title="Go to source code">create</a>( <span><code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a></code> <var>$entity</var></span> )</code>
+
+		<div class="description short">
+			<p>Creates an entity.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Creates an entity.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$entity</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a></code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-LeadCommerce.Shopware.SDK.Exception.MethodNotAllowedException.html">LeadCommerce\Shopware\SDK\Exception\MethodNotAllowedException</a></code>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="update" id="_update">
+
+		<td class="attributes"><code>
+			 public 
+
+			array|mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_update">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#182-196" title="Go to source code">update</a>( <span><code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a></code> <var>$entity</var></span> )</code>
+
+		<div class="description short">
+			<p>Updates an entity.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Updates an entity.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$entity</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|mixed
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-LeadCommerce.Shopware.SDK.Exception.MethodNotAllowedException.html">LeadCommerce\Shopware\SDK\Exception\MethodNotAllowedException</a></code>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="updateBatch" id="_updateBatch">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a>[]</code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_updateBatch">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#198-214" title="Go to source code">updateBatch</a>( <span><code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a>[]</code> <var>$entities</var></span> )</code>
+
+		<div class="description short">
+			<p>Updates a batch of this entity.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Updates a batch of this entity.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$entities</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-LeadCommerce.Shopware.SDK.Entity.Base.html">LeadCommerce\Shopware\SDK\Entity\Base</a>[]</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete" id="_delete">
+
+		<td class="attributes"><code>
+			 public 
+
+			array|mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#216-230" title="Go to source code">delete</a>( <span> <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Deletes an entity by its id..</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Deletes an entity by its id..</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|mixed
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-LeadCommerce.Shopware.SDK.Exception.MethodNotAllowedException.html">LeadCommerce\Shopware\SDK\Exception\MethodNotAllowedException</a></code>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="deleteBatch" id="_deleteBatch">
+
+		<td class="attributes"><code>
+			 public 
+
+			array|mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_deleteBatch">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#232-246" title="Go to source code">deleteBatch</a>( <span>array <var>$ids</var></span> )</code>
+
+		<div class="description short">
+			<p>Deletes a batch of this entity given by ids.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Deletes a batch of this entity given by ids.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ids</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array|mixed
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-LeadCommerce.Shopware.SDK.Exception.MethodNotAllowedException.html">LeadCommerce\Shopware\SDK\Exception\MethodNotAllowedException</a></code>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fetchSimple" id="_fetchSimple">
+
+		<td class="attributes"><code>
+			 protected 
+
+			mixed|Psr\Http\Message\ResponseInterface
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fetchSimple">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#248-259" title="Go to source code">fetchSimple</a>( <span> <var>$uri</var></span>, <span>string <var>$method</var> = <span class="php-quote">'GET'</span></span>, <span>null <var>$body</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$headers</var> = []</span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$uri</var></dt>
+					<dd></dd>
+					<dt><var>$method</var></dt>
+					<dd></dd>
+					<dt><var>$body</var></dt>
+					<dd></dd>
+					<dt><var>$headers</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed|Psr\Http\Message\ResponseInterface
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="fetchJson" id="_fetchJson">
+
+		<td class="attributes"><code>
+			 protected 
+
+			false|stdClass
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_fetchJson">#</a>
+		<code><a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#261-277" title="Go to source code">fetchJson</a>( <span> <var>$uri</var></span>, <span>string <var>$method</var> = <span class="php-quote">'GET'</span></span>, <span>null <var>$body</var> = <span class="php-keyword1">null</span></span>, <span>array <var>$headers</var> = []</span> )</code>
+
+		<div class="description short">
+			<p>Fetch as json object.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Fetch as json object.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$uri</var></dt>
+					<dd></dd>
+					<dt><var>$method</var></dt>
+					<dd></dd>
+					<dt><var>$body</var></dt>
+					<dd></dd>
+					<dt><var>$headers</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					false|stdClass
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="client" id="$client">
+		<td class="attributes"><code>
+			protected  
+			<code><a href="class-LeadCommerce.Shopware.SDK.ShopwareClient.html">LeadCommerce\Shopware\SDK\ShopwareClient</a></code>
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#18-21" title="Go to source code"><var>$client</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$client" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="queryPath" id="$queryPath">
+		<td class="attributes"><code>
+			protected  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#23-26" title="Go to source code"><var>$queryPath</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$queryPath" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="methodsAllowed" id="$methodsAllowed">
+		<td class="attributes"><code>
+			protected  
+			array
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-LeadCommerce.Shopware.SDK.Query.Base.html#28-39" title="Go to source code"><var>$methodsAllowed</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$methodsAllowed" class="anchor">#</a>
+				<code>[
+    Constants::METHOD_CREATE,
+    Constants::METHOD_GET,
+    Constants::METHOD_GET_BATCH,
+    Constants::METHOD_UPDATE,
+    Constants::METHOD_UPDATE_BATCH,
+    Constants::METHOD_DELETE,
+    Constants::METHOD_DELETE_BATCH,
+]</code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		shopware-sdk API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
