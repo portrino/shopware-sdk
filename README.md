@@ -26,6 +26,9 @@ Package information:
 composer require leadcommerce/shopware-sdk
 ```
 
+## Code Docs
+See [API Docs](http://leadcommercede.github.io/shopware-sdk/)
+
 ## Examples
 ```php
 <?php
