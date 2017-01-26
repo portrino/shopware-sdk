@@ -3,6 +3,8 @@
 namespace LeadCommerce\Shopware\SDK;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Handler\CurlHandler;
+use GuzzleHttp\HandlerStack;
 use LeadCommerce\Shopware\SDK\Query\AddressQuery;
 use LeadCommerce\Shopware\SDK\Query\ArticleQuery;
 use LeadCommerce\Shopware\SDK\Query\CacheQuery;
@@ -79,8 +81,11 @@ class ShopwareClient
         $this->baseUrl = $baseUrl;
         $this->username = $username;
         $this->apiKey = $apiKey;
+        $curlHandler = new CurlHandler();
+        $handlerStack = HandlerStack::create($curlHandler);
         $this->client = new Client([
             'base_uri' => $this->baseUrl,
+            'handler'  => $handlerStack
         ]);
     }
 
@@ -96,16 +101,8 @@ class ShopwareClient
      */
     public function request($uri, $method = 'GET', $body = null, $headers = [])
     {
-        if (empty($headers['Accept'])) {
-            $headers['Accept'] = 'application/json';
-        }
-
-        if (empty($headers['Content-Type'])) {
-            $headers['Content-Type'] = 'application/json';
-        }
-
         return $this->client->request($method, $uri, [
-            'form_params' => $body,
+            'json'        => $body,
             'headers'     => $headers,
             'auth'        => [
                 $this->username,

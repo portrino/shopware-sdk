@@ -41,7 +41,20 @@ class Base
      */
     public function getArrayCopy()
     {
-        return get_object_vars($this);
+        $array = get_object_vars($this);
+
+        foreach ($array as $key => &$value) {
+            if ($value instanceof Base) {
+                $array[$key] = $value->getArrayCopy();
+            } else if (is_array($value)) {
+                foreach ($value as $k => $v) {
+                    if ($v instanceof Base) {
+                        $value[$k] = $v->getArrayCopy();
+                    }
+                }
+            }
+        }
+        return $array;
     }
 
     /**
