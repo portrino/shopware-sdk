@@ -122,6 +122,10 @@ class Article extends Base
      * @var Category[]
      */
     protected $categories;
+    /**
+     * @var ArticleDetail
+     */
+    protected $mainDetail;
 
     /**
      * @return int
@@ -662,4 +666,36 @@ class Article extends Base
 
         return $this;
     }
+
+    /**
+     * @return ArticleDetail
+     */
+    public function getMainDetail(): ArticleDetail
+    {
+        return $this->mainDetail;
+    }
+
+    /**
+     * @param ArticleDetail $mainDetail
+     */
+    public function setMainDetail(ArticleDetail $mainDetail)
+    {
+        $this->mainDetail = $mainDetail;
+    }
+
+
+    /**
+     * @return array
+     */
+    public function getArrayCopy()
+    {
+        $arrayCopy = parent::getArrayCopy();
+        if (!empty($arrayCopy['taxId'])) {
+            $arrayCopy['tax'] = $arrayCopy['taxId'];
+            unset($arrayCopy['taxId']);
+        }
+        return $arrayCopy;
+    }
+
+
 }
