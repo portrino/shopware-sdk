@@ -670,7 +670,7 @@ class Article extends Base
     /**
      * @return ArticleDetail
      */
-    public function getMainDetail(): ArticleDetail
+    public function getMainDetail()
     {
         return $this->mainDetail;
     }
