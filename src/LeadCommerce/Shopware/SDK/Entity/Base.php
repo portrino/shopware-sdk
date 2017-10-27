@@ -54,6 +54,11 @@ class Base
                 }
             }
         }
+
+        $array = array_filter($array, function ($value) {
+            return $value !== null;
+        });
+
         return $array;
     }
 
