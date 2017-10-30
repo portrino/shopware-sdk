@@ -41,6 +41,32 @@ class ArticleQueryTest extends BaseTest
         $this->assertEquals(2, $article->getMainDetailId());
     }
 
+    public function testFindByParams()
+    {
+        $this->mockHandler = new MockHandler([
+            new Response(200, [], file_get_contents(__DIR__ . '/files/get_articles.json')),
+        ]);
+
+        $entities = $this->getQuery()->findByParams(['limit' => 10, 'start' => 20]);
+        $this->assertCount(2, $entities);
+
+        foreach ($entities as $entity) {
+            $this->assertInstanceOf(Article::class, $entity);
+        }
+
+        /** @var \LeadCommerce\Shopware\SDK\Entity\Article $article */
+        $article = $entities[1];
+
+        $this->assertEquals(2, $article->getId());
+        $this->assertEquals('Glastisch rund', $article->getName());
+        $this->assertEquals(2, $article->getMainDetailId());
+
+        $lastRequest = $this->mockHandler->getLastRequest();
+
+        $this->assertContains('limit=10', $lastRequest->getUri()->getQuery());
+        $this->assertContains('start=20', $lastRequest->getUri()->getQuery());
+    }
+
     /**
      * Gets the query to test.
      *

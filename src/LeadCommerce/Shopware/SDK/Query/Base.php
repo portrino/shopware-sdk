@@ -70,6 +70,33 @@ abstract class Base
     }
 
     /**
+     * Finds entities by params
+     *
+     * e.g.:
+     *
+     * $params = [
+     *      'limit' => 10
+     *      'start' => 20
+     *      'filter' => [
+     *          'property' => 'name'
+     *          'expression' => 'LIKE'
+     *          'value' => '%foo'
+     *      ]
+     * ]
+     *
+     * @return \LeadCommerce\Shopware\SDK\Entity\Base[]
+     */
+    public function findByParams($params)
+    {
+        $this->validateMethodAllowed(Constants::METHOD_GET_BATCH);
+
+        $queryString = http_build_query($params);
+        $uri = rtrim($this->queryPath, '?') . '?' . $queryString;
+
+        return $this->fetch($uri);
+    }
+
+    /**
      * Validates if the requested method is allowed.
      *
      * @param $method
