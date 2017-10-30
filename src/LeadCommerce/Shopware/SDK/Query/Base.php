@@ -146,21 +146,26 @@ abstract class Base
      *
      * @param ResponseInterface $response
      *
-     * @return array|mixed
+     * @return array|\LeadCommerce\Shopware\SDK\Entity\Base
      */
     protected function createEntityFromResponse(ResponseInterface $response)
     {
+        $result = [];
         $content = $response->getBody()->getContents();
         $content = json_decode($content);
-        $content = $content->data;
+        $data = isset($content->data) ? $content->data : null;
 
-        if (is_array($content)) {
-            return array_map(function ($item) {
+        if (is_array($data)) {
+            $result = array_map(function ($item) {
                 return $this->createEntity($item);
-            }, $content);
-        } else {
-            return $this->createEntity($content);
+            }, $data);
         }
+
+        if (is_object($data)) {
+            $result = $this->createEntity($data);
+        }
+
+        return $result;
     }
 
     /**

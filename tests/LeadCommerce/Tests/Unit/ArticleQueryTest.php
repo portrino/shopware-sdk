@@ -206,7 +206,7 @@ class ArticleQueryTest extends BaseTest
     public function testDelete()
     {
         $this->mockHandler = new MockHandler([
-            new Response(200, [], '{"success":true,"data":[]}'),
+            new Response(200, [], '{"success":true}'),
         ]);
 
         $entities = $this->getQuery()->delete(1);
