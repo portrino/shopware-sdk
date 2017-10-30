@@ -6,6 +6,7 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
 use LeadCommerce\Shopware\SDK\Entity\Article;
 use LeadCommerce\Shopware\SDK\Query\ArticleQuery;
+use LeadCommerce\Shopware\SDK\Util\Constants;
 
 /**
  * Copyright 2016 LeadCommerce
@@ -47,7 +48,33 @@ class ArticleQueryTest extends BaseTest
             new Response(200, [], file_get_contents(__DIR__ . '/files/get_articles.json')),
         ]);
 
-        $entities = $this->getQuery()->findByParams(['limit' => 10, 'start' => 20]);
+        $term = 'foo';
+
+        $entities = $this->getQuery()->findByParams(
+            [
+                'limit' => 10,
+                'start' => 20,
+                'sort' => [
+                    [
+                        'property' => 'name',
+                        'direction' => Constants::ORDER_ASC
+                    ]
+                ],
+                'filter' => [
+                    [
+                        'property' => 'name',
+                        'expression' => 'LIKE',
+                        'value' => '%' . $term . '%'
+                    ],
+                    [
+                        'operator'   => 'AND',
+                        'property'   => 'number',
+                        'expression' => '>',
+                        'value'      => '500'
+                    ]
+                ]
+            ]);
+
         $this->assertCount(2, $entities);
 
         foreach ($entities as $entity) {
@@ -63,8 +90,20 @@ class ArticleQueryTest extends BaseTest
 
         $lastRequest = $this->mockHandler->getLastRequest();
 
-        $this->assertContains('limit=10', $lastRequest->getUri()->getQuery());
-        $this->assertContains('start=20', $lastRequest->getUri()->getQuery());
+        $query = urldecode($lastRequest->getUri()->getQuery());
+
+        $this->assertContains('limit=10', $query);
+        $this->assertContains('start=20', $query);
+        $this->assertContains('sort[0][property]=name', $query);
+        $this->assertContains('sort[0][direction]=' . Constants::ORDER_ASC, $query);
+        $this->assertContains('filter[0][property]=name', $query);
+        $this->assertContains('filter[0][expression]=LIKE', $query);
+        $this->assertContains('filter[0][value]=%foo%', $query);
+        $this->assertContains('filter[1][operator]=AND', $query);
+        $this->assertContains('filter[1][property]=number', $query);
+        $this->assertContains('filter[1][expression]=>', $query);
+        $this->assertContains('filter[1][value]=500', $query);
+
     }
 
     /**

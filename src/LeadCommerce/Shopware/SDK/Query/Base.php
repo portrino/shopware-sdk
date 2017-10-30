@@ -75,11 +75,17 @@ abstract class Base
      * e.g.:
      *
      * $params = [
-     *      'limit' => 10
-     *      'start' => 20
+     *      'limit' => 10,
+     *      'start' => 20,
+     *      'sort' => [
+     *          [
+     *              'property' => 'name',
+     *              'direction' => 'ASC'
+     *          ]
+     *      ],
      *      'filter' => [
-     *          'property' => 'name'
-     *          'expression' => 'LIKE'
+     *          'property' => 'name',
+     *          'expression' => 'LIKE',
      *          'value' => '%foo'
      *      ]
      * ]
