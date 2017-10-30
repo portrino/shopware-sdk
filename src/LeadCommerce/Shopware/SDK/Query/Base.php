@@ -84,9 +84,17 @@ abstract class Base
      *          ]
      *      ],
      *      'filter' => [
-     *          'property' => 'name',
-     *          'expression' => 'LIKE',
-     *          'value' => '%foo'
+     *          [
+     *              'property' => 'name',
+     *              'expression' => 'LIKE',
+     *              'value' => '%foo'
+     *          ],
+     *          [
+     *              'operator'   => 'AND',
+     *              'property'   => 'number',
+     *              'expression' => '>',
+     *              'value'      => '500'
+     *          ]
      *      ]
      * ]
      *
