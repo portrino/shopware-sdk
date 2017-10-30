@@ -157,7 +157,12 @@ abstract class Base
 
         if (is_array($data)) {
             $result = array_map(function ($item) {
-                return $this->createEntity($item);
+                if (isset($item->id)) {
+                    return $this->createEntity($item);
+                }
+                if (isset($item->data) && isset($item->data->id)) {
+                    return $this->createEntity($item->data);
+                }
             }, $data);
         }
 

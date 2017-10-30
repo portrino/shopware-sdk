@@ -216,12 +216,36 @@ class ArticleQueryTest extends BaseTest
 
     public function testDeleteBatch()
     {
+        $jsonResponse = [
+            'success' => true,
+            'data' => [
+                [
+                    'success' => true,
+                    'operation' => 'delete',
+                    'data' => [
+                        'id' => 1,
+                        'mainDetailId' => 1,
+                        'taxId' => 1
+                    ]
+                ],
+                [
+                    'success' => true,
+                    'operation' => 'delete',
+                    'data' => [
+                        'id' => 2,
+                        'mainDetailId' => 2,
+                        'taxId' => 1
+                    ]
+                ]
+            ]
+        ];
+
         $this->mockHandler = new MockHandler([
-            new Response(200, [], '{"success":true,"data":[]}'),
+            new Response(200, [], json_encode($jsonResponse)),
         ]);
 
         $entities = $this->getQuery()->deleteBatch([1, 2]);
 
-        $this->assertCount(0, $entities);
+        $this->assertCount(2, $entities);
     }
 }
