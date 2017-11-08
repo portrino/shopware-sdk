@@ -39,6 +39,16 @@ abstract class Base
     ];
 
     /**
+     * @var array
+     */
+    protected $data;
+
+    /**
+     * @var int
+     */
+    protected $total;
+
+    /**
      * Base constructor.
      *
      * @param $client
@@ -153,9 +163,10 @@ abstract class Base
         $result = [];
         $content = $response->getBody()->getContents();
         $content = json_decode($content);
-        $data = isset($content->data) ? $content->data : null;
+        $this->data = isset($content->data) ? $content->data : null;
+        $this->total = isset($content->total) ? $content->total : null;
 
-        if (is_array($data)) {
+        if (is_array($this->data)) {
             $result = array_map(function ($item) {
                 if (isset($item->id)) {
                     return $this->createEntity($item);
@@ -163,11 +174,11 @@ abstract class Base
                 if (isset($item->data) && isset($item->data->id)) {
                     return $this->createEntity($item->data);
                 }
-            }, $data);
+            }, $this->data);
         }
 
-        if (is_object($data)) {
-            $result = $this->createEntity($data);
+        if (is_object($this->data)) {
+            $result = $this->createEntity($this->data);
         }
 
         return $result;
@@ -294,6 +305,22 @@ abstract class Base
         $this->validateMethodAllowed(Constants::METHOD_DELETE_BATCH);
 
         return $this->fetch($this->queryPath . '/', 'DELETE', $ids);
+    }
+
+    /**
+     * @return array
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->total;
     }
 
     /**
