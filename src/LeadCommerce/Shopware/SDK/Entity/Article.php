@@ -678,7 +678,7 @@ class Article extends Base
     /**
      * @param ArticleDetail $mainDetail
      */
-    public function setMainDetail(ArticleDetail $mainDetail)
+    public function setMainDetail($mainDetail)
     {
         $this->mainDetail = $mainDetail;
     }
