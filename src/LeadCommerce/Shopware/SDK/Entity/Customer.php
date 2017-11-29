@@ -10,10 +10,10 @@
 namespace LeadCommerce\Shopware\SDK\Entity;
 
 /**
- * Class Customers
+ * Class Customer
  * @package LeadCommerce\Shopware\SDK\Entity
  */
-class Customers extends Base
+class Customer extends Base
 {
     /**
      * @var int
@@ -51,7 +51,7 @@ class Customers extends Base
     /**
      * @param int $id
      *
-     * @return Customers
+     * @return Customer
      */
     public function setId($id)
     {
@@ -71,7 +71,7 @@ class Customers extends Base
     /**
      * @param string $salutation
      *
-     * @return Customers
+     * @return Customer
      */
     public function setSalutation($salutation)
     {
@@ -91,7 +91,7 @@ class Customers extends Base
     /**
      * @param string $number
      *
-     * @return Customers
+     * @return Customer
      */
     public function setNumber($number)
     {
@@ -111,7 +111,7 @@ class Customers extends Base
     /**
      * @param string $firstname
      *
-     * @return Customers
+     * @return Customer
      */
     public function setFirstName($firstname)
     {
@@ -131,7 +131,7 @@ class Customers extends Base
     /**
      * @param string $lastname
      *
-     * @return Customers
+     * @return Customer
      */
     public function setLastName($lastname)
     {
@@ -151,7 +151,7 @@ class Customers extends Base
     /**
      * @param CustomerAttribute[] $attribute
      *
-     * @return Customers
+     * @return Customer
      */
     public function setAttributes($attribute)
     {
