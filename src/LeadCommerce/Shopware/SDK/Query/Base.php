@@ -4,6 +4,7 @@ namespace LeadCommerce\Shopware\SDK\Query;
 
 use LeadCommerce\Shopware\SDK\Exception\MethodNotAllowedException;
 use LeadCommerce\Shopware\SDK\ShopwareClient;
+use LeadCommerce\Shopware\SDK\Util\ArrayUtil;
 use LeadCommerce\Shopware\SDK\Util\Constants;
 use Psr\Http\Message\ResponseInterface;
 
@@ -108,16 +109,15 @@ abstract class Base
      *      ]
      * ]
      *
+     * @param array $params
+     *
      * @return \LeadCommerce\Shopware\SDK\Entity\Base[]
      */
     public function findByParams($params)
     {
         $this->validateMethodAllowed(Constants::METHOD_GET_BATCH);
 
-        $queryString = http_build_query($params);
-        $uri = rtrim($this->queryPath, '?') . '?' . $queryString;
-
-        return $this->fetch($uri);
+        return $this->fetch($this->queryPath, 'GET', null, [], $params);
     }
 
     /**
@@ -141,11 +141,21 @@ abstract class Base
      * @param string $method
      * @param null   $body
      * @param array  $headers
+     * @param array  $uriParams
      *
      * @return array|mixed
      */
-    protected function fetch($uri, $method = 'GET', $body = null, $headers = [])
+    protected function fetch($uri, $method = 'GET', $body = null, $headers = [], $uriParams = [])
     {
+        if (is_array($uriParams) && count($uriParams) > 0) {
+            if (strpos($uri, '?') !== false) {
+                parse_str(substr($uri, strpos($uri, '?') + 1), $existingUriParams);
+                ArrayUtil::mergeRecursiveWithOverrule($existingUriParams, $uriParams);
+                $uri = substr($uri, 0, strpos($uri, '?')) . '?' . http_build_query($existingUriParams);
+            } else {
+                $uri = $uri . '?' . http_build_query($uriParams);
+            }
+        }
         $response = $this->client->request($uri, $method, $body, $headers);
 
         return $this->createEntityFromResponse($response);
@@ -214,57 +224,61 @@ abstract class Base
     /**
      * Finds an entity by its id.
      *
-     * @param $id
+     * @param mixed $id
+     * @param array $params
      *
      * @return \LeadCommerce\Shopware\SDK\Entity\Base
      */
-    public function findOne($id)
+    public function findOne($id, $params = [])
     {
         $this->validateMethodAllowed(Constants::METHOD_GET);
 
-        return $this->fetch($this->queryPath . '/' . $id);
+        return $this->fetch($this->queryPath . '/' . $id, 'GET', null, [], $params);
     }
 
     /**
      * Creates an entity.
      *
      * @param \LeadCommerce\Shopware\SDK\Entity\Base $entity
+     * @param array $params
      *
      * @throws MethodNotAllowedException
      *
      * @return \LeadCommerce\Shopware\SDK\Entity\Base
      */
-    public function create(\LeadCommerce\Shopware\SDK\Entity\Base $entity)
+    public function create(\LeadCommerce\Shopware\SDK\Entity\Base $entity, $params = [])
     {
         $this->validateMethodAllowed(Constants::METHOD_CREATE);
 
-        return $this->fetch($this->queryPath, 'POST', $entity->getArrayCopy());
+        return $this->fetch($this->queryPath, 'POST', $entity->getArrayCopy(), [], $params);
     }
 
     /**
      * Updates an entity.
      *
      * @param \LeadCommerce\Shopware\SDK\Entity\Base $entity
+     * @param array $params
      *
      * @throws MethodNotAllowedException
      *
      * @return array|mixed
      */
-    public function update(\LeadCommerce\Shopware\SDK\Entity\Base $entity)
+    public function update(\LeadCommerce\Shopware\SDK\Entity\Base $entity, $params = [])
     {
         $this->validateMethodAllowed(Constants::METHOD_UPDATE);
 
-        return $this->fetch($this->queryPath . '/' . $entity->getId(), 'PUT', $entity->getArrayCopy());
+        return $this->fetch($this->queryPath . '/' . $entity->getId(), 'PUT', $entity->getArrayCopy(), [], $params);
     }
 
     /**
      * Updates a batch of this entity.
      *
      * @param \LeadCommerce\Shopware\SDK\Entity\Base[] $entities
+     * @param array $params
      *
      * @return \LeadCommerce\Shopware\SDK\Entity\Base[]
      */
-    public function updateBatch($entities)
+    public function updateBatch($entities, $params = [])
     {
         $this->validateMethodAllowed(Constants::METHOD_UPDATE_BATCH);
         $body = [];
@@ -272,19 +286,20 @@ abstract class Base
             $body[] = $entity->getArrayCopy();
         }
 
-        return $this->fetch($this->queryPath . '/', 'PUT', $body);
+        return $this->fetch($this->queryPath . '/', 'PUT', $body, [], $params);
     }
 
     /**
      * Deletes an entity by its id..
      *
-     * @param $id
+     * @param mixed $id
+     * @param array $params
      *
      * @throws MethodNotAllowedException
      *
      * @return array|mixed
      */
-    public function delete($id)
+    public function delete($id, $params = [])
     {
         $this->validateMethodAllowed(Constants::METHOD_DELETE);
 
@@ -295,16 +310,17 @@ abstract class Base
      * Deletes a batch of this entity given by ids.
      *
      * @param array $ids
+     * @param array $params
      *
      * @throws MethodNotAllowedException
      *
      * @return array|mixed
      */
-    public function deleteBatch(array $ids)
+    public function deleteBatch(array $ids, $params = [])
     {
         $this->validateMethodAllowed(Constants::METHOD_DELETE_BATCH);
 
-        return $this->fetch($this->queryPath . '/', 'DELETE', $ids);
+        return $this->fetch($this->queryPath . '/', 'DELETE', $ids, [], $params);
     }
 
     /**
