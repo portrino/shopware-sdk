@@ -57,6 +57,10 @@ class Order extends \LeadCommerce\Shopware\SDK\Entity\Base
      * @var OrderBilling[]
      */
     protected $billing;
+    /**
+     * @var Customer[]
+     */
+    protected $customer;
 
     /**
      * @return int
@@ -293,6 +297,26 @@ class Order extends \LeadCommerce\Shopware\SDK\Entity\Base
     public function setBilling($billing)
     {
         $this->billing = $billing;
+
+        return $this;
+    }
+
+    /**
+     * @return Customer[]
+     */
+    public function getCustomer()
+    {
+        return $this->customer;
+    }
+
+    /**
+     * @param Customer[] $customer
+     *
+     * @return Order
+     */
+    public function setCustomer($customer)
+    {
+        $this->customer = $customer;
 
         return $this;
     }
