@@ -30,6 +30,10 @@ class Customer extends Base
     /**
      * @var string
      */
+    protected $email;
+    /**
+     * @var string
+     */
     protected $firstname;
     /**
      * @var string
@@ -39,6 +43,10 @@ class Customer extends Base
      * @var CustomerAttribute[]
      */
     protected $attribute;
+    /**
+     * @var CustomerDefaultBillingAddress[]
+     */
+    protected $defaultBillingAddress;
 
     /**
      * @return int
@@ -156,6 +164,26 @@ class Customer extends Base
     public function setAttributes($attribute)
     {
         $this->attribute = $attribute;
+
+        return $this;
+    }
+
+    /**
+     * @return CustomerDefaultBillingAddress[]
+     */
+    public function getDefaultBillingAddress()
+    {
+        return $this->defaultBillingAddress;
+    }
+
+    /**
+     * @param CustomerDefaultBillingAddress[] $defaultBillingAddress
+     *
+     * @return Customer
+     */
+    public function setDefaultBillingAddress($defaultBillingAddress)
+    {
+        $this->defaultBillingAddress = $defaultBillingAddress;
 
         return $this;
     }
