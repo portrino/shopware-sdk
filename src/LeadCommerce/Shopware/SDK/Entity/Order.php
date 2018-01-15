@@ -1,5 +1,5 @@
 <?php
-namespace Portrino\LeadCommerce\Shopware\SDK\Entity;
+namespace LeadCommerce\Shopware\SDK\Entity;
 
 /**
  * Class Order
