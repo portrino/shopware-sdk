@@ -208,7 +208,7 @@ abstract class Base
 
         if ($entity instanceof \LeadCommerce\Shopware\SDK\Entity\Base) {
             $content = json_decode(json_encode($content), true);
-            $entity->setEntityAttributes($content);
+            $this->client->getJsonMapper()->map($content, $entity);
         }
 
         return $entity;
@@ -285,7 +285,7 @@ abstract class Base
         foreach ($entities as $entity) {
             $body[] = $entity->getArrayCopy();
         }
-
+        
         return $this->fetch($this->queryPath . '/', 'PUT', $body, [], $params);
     }
 

@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
  * Class ArticleTest
  * @package LeadCommerce\Tests\Unit
  */
-class ArticleTest extends TestCase
+class ArticleTest extends BaseTest
 {
     public function testThatArrayCopyDoesNotReturnArrayElementsWithNullValue()
     {
@@ -18,7 +18,8 @@ class ArticleTest extends TestCase
         $attributes['taxId'] = null;
 
         $entity = new Article();
-        $entity->setEntityAttributes($attributes);
+        /** @var Article $entity */
+        $entity = $this->getMockClient()->getJsonMapper()->map($attributes, $entity);
         $arrayCopy = $entity->getArrayCopy();
 
         static::assertArrayNotHasKey('taxId', $arrayCopy);

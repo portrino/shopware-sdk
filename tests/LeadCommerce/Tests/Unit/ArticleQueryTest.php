@@ -4,7 +4,9 @@ namespace LeadCommerce\Tests\Unit;
 
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
+use JsonMapper_Exception;
 use LeadCommerce\Shopware\SDK\Entity\Article;
+use LeadCommerce\Shopware\SDK\Exception\MethodNotAllowedException;
 use LeadCommerce\Shopware\SDK\Query\ArticleQuery;
 use LeadCommerce\Shopware\SDK\Util\Constants;
 
@@ -67,10 +69,10 @@ class ArticleQueryTest extends BaseTest
                         'value' => '%' . $term . '%'
                     ],
                     [
-                        'operator'   => 'AND',
-                        'property'   => 'number',
+                        'operator' => 'AND',
+                        'property' => 'number',
                         'expression' => '>',
-                        'value'      => '500'
+                        'value' => '500'
                     ]
                 ]
             ]);
@@ -135,6 +137,10 @@ class ArticleQueryTest extends BaseTest
         $this->assertEquals(1, $entity->getMainDetailId());
     }
 
+    /**
+     * @throws JsonMapper_Exception
+     * @throws MethodNotAllowedException
+     */
     public function testCreate()
     {
         $this->mockHandler = new MockHandler([
@@ -144,7 +150,7 @@ class ArticleQueryTest extends BaseTest
         $attributes = json_decode(file_get_contents(__DIR__ . '/files/create_article.json'), true);
 
         $entity = new Article();
-        $entity->setEntityAttributes($attributes['data']);
+        $entity = $this->getMockClient()->getJsonMapper()->map($attributes['data'], $entity);
 
         $response = $this->getQuery()->create($entity);
 
@@ -153,6 +159,10 @@ class ArticleQueryTest extends BaseTest
         $this->assertEquals($entity->getArrayCopy(), $response->getArrayCopy());
     }
 
+    /**
+     * @throws JsonMapper_Exception
+     * @throws MethodNotAllowedException
+     */
     public function testUpdate()
     {
         $this->mockHandler = new MockHandler([
@@ -162,7 +172,9 @@ class ArticleQueryTest extends BaseTest
         $attributes = json_decode(file_get_contents(__DIR__ . '/files/update_article.json'), true);
 
         $entity = new Article();
-        $entity->setEntityAttributes($attributes);
+        /** @var Article $entity */
+        $entity = $this->getMockClient()->getJsonMapper()->map($attributes, $entity);
+
         /** @var Article $updatedEntity */
         $updatedEntity = $this->getQuery()->update($entity);
         $this->assertInstanceOf(Article::class, $updatedEntity);
@@ -181,7 +193,8 @@ class ArticleQueryTest extends BaseTest
         $entities = [];
         foreach ($attributes as $attribute) {
             $entity = new Article();
-            $entity->setEntityAttributes($attribute);
+            /** @var Article $entity */
+            $entity = $this->getMockClient()->getJsonMapper()->map($attribute, $entity);
             $entities[] = $entity;
         }
 
