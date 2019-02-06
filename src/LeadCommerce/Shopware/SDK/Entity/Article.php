@@ -27,7 +27,7 @@ class Article extends Base
      */
     protected $supplierId;
     /**
-     * @var string
+     * @var Supplier
      */
     protected $supplier;
     /**
@@ -196,7 +196,7 @@ class Article extends Base
     }
 
     /**
-     * @return string
+     * @return Supplier
      */
     public function getSupplier()
     {
@@ -204,9 +204,9 @@ class Article extends Base
     }
 
     /**
-     * @param string $supplier
+     * @param Supplier $supplier
      */
-    public function setSupplier($supplier)
+    public function setSupplier(Supplier $supplier)
     {
         $this->supplier = $supplier;
     }
