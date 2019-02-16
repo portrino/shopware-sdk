@@ -35,7 +35,7 @@ class Article extends Base
      */
     protected $taxId;
     /**
-     * @var float
+     * @var Tax
      */
     protected $tax;
     /**
@@ -232,7 +232,7 @@ class Article extends Base
     }
 
     /**
-     * @return float
+     * @return Tax
      */
     public function getTax()
     {
@@ -240,7 +240,7 @@ class Article extends Base
     }
 
     /**
-     * @param float $tax
+     * @param Tax $tax
      */
     public function setTax($tax)
     {
