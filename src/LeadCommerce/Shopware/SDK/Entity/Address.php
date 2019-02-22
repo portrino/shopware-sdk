@@ -80,6 +80,11 @@ class Address extends Base
     protected $attribute;
 
     /**
+     * @var Customer
+     */
+    protected $customer;
+
+    /**
      * @return int
      */
     public function getId()
@@ -397,5 +402,21 @@ class Address extends Base
         $this->attribute = $attribute;
 
         return $this;
+    }
+
+    /**
+     * @return Customer
+     */
+    public function getCustomer()
+    {
+        return $this->customer;
+    }
+
+    /**
+     * @param Customer $customer
+     */
+    public function setCustomer($customer)
+    {
+        $this->customer = $customer;
     }
 }
