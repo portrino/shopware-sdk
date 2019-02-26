@@ -67,7 +67,7 @@ class Address extends Base
      */
     protected $additionalAddressLine2;
     /**
-     * @var int
+     * @var Country
      */
     protected $country;
     /**
@@ -345,7 +345,7 @@ class Address extends Base
     }
 
     /**
-     * @return int
+     * @return Country
      */
     public function getCountry()
     {
@@ -353,7 +353,7 @@ class Address extends Base
     }
 
     /**
-     * @param int $country
+     * @param Country $country
      *
      * @return Address
      */
