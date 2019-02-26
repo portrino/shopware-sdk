@@ -44,7 +44,7 @@ class Customer extends Base
      */
     protected $attribute;
     /**
-     * @var array
+     * @var Address
      */
     protected $defaultBillingAddress;
 
@@ -169,7 +169,7 @@ class Customer extends Base
     }
 
     /**
-     * @return array
+     * @return Address
      */
     public function getDefaultBillingAddress()
     {
@@ -177,7 +177,7 @@ class Customer extends Base
     }
 
     /**
-     * @param array $defaultBillingAddress
+     * @param Address $defaultBillingAddress
      *
      * @return Customer
      */
