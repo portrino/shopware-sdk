@@ -55,7 +55,7 @@ class Address extends Base
      */
     protected $phone;
     /**
-     * @var int
+     * @var string
      */
     protected $vatId;
     /**
@@ -285,7 +285,7 @@ class Address extends Base
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getVatId()
     {
@@ -293,7 +293,7 @@ class Address extends Base
     }
 
     /**
-     * @param int $vatId
+     * @param string $vatId
      *
      * @return Address
      */
