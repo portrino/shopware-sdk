@@ -91,7 +91,7 @@ class Order extends \LeadCommerce\Shopware\SDK\Entity\Base
     }
 
     /**
-     * @param $transactionId
+     * @param string $transactionId
      * @return Order
      */
     public function setTransactionId($transactionId)

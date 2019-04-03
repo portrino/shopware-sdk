@@ -110,7 +110,7 @@ class OrderBilling extends Base
     }
 
     /**
-     * @param $street
+     * @param string $street
      * @return OrderBilling
      */
     public function setStreet($street)
@@ -129,7 +129,7 @@ class OrderBilling extends Base
     }
 
     /**
-     * @param $zipcode
+     * @param string $zipcode
      * @return OrderBilling
      */
     public function setZipcode($zipcode)
@@ -148,7 +148,7 @@ class OrderBilling extends Base
     }
 
     /**
-     * @param $city
+     * @param string $city
      * @return OrderBilling
      */
     public function setCity($city)
