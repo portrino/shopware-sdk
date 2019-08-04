@@ -54,7 +54,7 @@ class Order extends \LeadCommerce\Shopware\SDK\Entity\Base
     protected $transactionId;
 
     /**
-     * @var OrderBilling[]
+     * @var OrderBilling
      */
     protected $billing;
     /**
@@ -282,7 +282,7 @@ class Order extends \LeadCommerce\Shopware\SDK\Entity\Base
     }
 
     /**
-     * @return OrderBilling[]
+     * @return OrderBilling
      */
     public function getBilling()
     {
@@ -290,7 +290,7 @@ class Order extends \LeadCommerce\Shopware\SDK\Entity\Base
     }
 
     /**
-     * @param OrderBilling[] $billing
+     * @param OrderBilling $billing
      *
      * @return Order
      */

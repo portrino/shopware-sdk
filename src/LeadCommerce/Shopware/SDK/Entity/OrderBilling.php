@@ -23,6 +23,10 @@ class OrderBilling extends Base
     /**
      * @var string
      */
+    protected $salutation;
+    /**
+     * @var string
+     */
     protected $firstname;
     /**
      * @var string
@@ -42,6 +46,16 @@ class OrderBilling extends Base
     protected $city;
 
     /**
+     * @var Country
+     */
+    protected $country;
+
+    /**
+     * @var string
+     */
+    protected $vatId;
+
+    /**
      * @return int
      */
     public function getId()
@@ -57,6 +71,26 @@ class OrderBilling extends Base
     public function setId($id)
     {
         $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSalutation()
+    {
+        return $this->salutation;
+    }
+
+    /**
+     * @param string $salutation
+     *
+     * @return Address
+     */
+    public function setSalutation($salutation)
+    {
+        $this->salutation = $salutation;
 
         return $this;
     }
@@ -154,6 +188,46 @@ class OrderBilling extends Base
     public function setCity($city)
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * @return Country
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Country $country
+     *
+     * @return Address
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVatId()
+    {
+        return $this->vatId;
+    }
+
+    /**
+     * @param string $vatId
+     *
+     * @return Address
+     */
+    public function setVatId($vatId)
+    {
+        $this->vatId = $vatId;
 
         return $this;
     }
