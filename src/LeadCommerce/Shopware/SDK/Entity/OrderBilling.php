@@ -20,26 +20,32 @@ class OrderBilling extends Base
      * @var int
      */
     protected $id;
+    
     /**
      * @var string
      */
     protected $salutation;
+    
     /**
      * @var string
      */
     protected $firstname;
+    
     /**
      * @var string
      */
     protected $lastname;
+    
     /**
      * @var string
      */
     protected $street;
+    
     /**
      * @var string
      */
     protected $zipcode;
+    
     /**
      * @var string
      */
@@ -193,7 +199,7 @@ class OrderBilling extends Base
     }
 
     /**
-     * @return Country
+     * @return \LeadCommerce\Shopware\SDK\Entity\Country
      */
     public function getCountry()
     {
@@ -201,7 +207,7 @@ class OrderBilling extends Base
     }
 
     /**
-     * @param Country $country
+     * @param \LeadCommerce\Shopware\SDK\Entity\Country $country
      *
      * @return Address
      */
